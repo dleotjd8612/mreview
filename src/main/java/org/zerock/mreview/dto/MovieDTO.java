@@ -27,6 +27,7 @@ public class MovieDTO {
     private double avg;
 
     // 리뷰 수 jpa의 count()
+    //    @ColumnDefault("0"): 컬럼 기본값 설정
     private int reviewCnt;
 
     private LocalDateTime regDate;
