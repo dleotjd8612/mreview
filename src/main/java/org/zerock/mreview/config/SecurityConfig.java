@@ -63,7 +63,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers("/sample/member").hasRole("USER");
         http.formLogin();
         http.csrf().disable();
-//        http.logout();
+        http.logout();
 
         http.oauth2Login().successHandler(successHandler());
         // rememberMe(): 사용자의 로그인 정보를 쿠키에 7일간 저장하는 체크 박스 생성, 체크하고 로그인하면 7일간 쿠키가 저장됨
