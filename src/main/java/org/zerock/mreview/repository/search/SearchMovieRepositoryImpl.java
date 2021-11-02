@@ -13,7 +13,6 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
-import org.zerock.mreview.dto.MovieDTO;
 import org.zerock.mreview.entity.Movie;
 import org.zerock.mreview.entity.QMovie;
 import org.zerock.mreview.entity.QMovieImage;
