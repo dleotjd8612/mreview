@@ -22,12 +22,12 @@ public class MovieController {
 
     private final MovieService movieService; //final
 
-    @GetMapping("/register")
+    @GetMapping("register")
     public void register() {
 //        log.info("register..........");
     }
 
-    @PostMapping("/register")
+    @PostMapping("register")
     public String register(MovieDTO movieDTO, RedirectAttributes redirectAttributes) {
         log.info("movieDTO: " + movieDTO);
         
@@ -43,7 +43,7 @@ public class MovieController {
         return "redirect:/movie/list";
     }
 
-    @GetMapping("/list")
+    @GetMapping("list")
     public void list(PageRequestDTO pageRequestDTO, Model model) {
         log.info("pageRequestDTO: " + pageRequestDTO);
         model.addAttribute("result", movieService.getList(pageRequestDTO));
@@ -53,14 +53,14 @@ public class MovieController {
     // 1) @ModelAttribute 어노테이션이 붙은 객체를 자동으로 생성한다.
     // 2) 생성된 오브젝트에(PageRequestDTO) HTTP로 넘어 온 값들을 자동으로 바인딩한다.
     // 3) 마지막으로 @ModelAttribute 어노테이션이 붙은 객체(PageRequestDTO 객체)가 자동으로 Model 객체에 추가되고 뷰단으로 전달된다.
-    @GetMapping({"/read", "/modify"})
+    @GetMapping({"read", "modify"})
     public void read(long mno, @ModelAttribute("requestDTO") PageRequestDTO requestDTO, Model model){
         log.info("mno: " + mno);
         MovieDTO movieDTO = movieService.getMovie(mno);
         model.addAttribute("dto", movieDTO);
     }
 
-    @PostMapping("/remove") // 영화 삭제 기능
+    @PostMapping("remove") // 영화 삭제 기능
     public String remove(long mno, RedirectAttributes redirectAttributes) {
         log.info("mno: " + mno);
         movieService.removeWithReplise(mno);
@@ -68,7 +68,7 @@ public class MovieController {
         return "redirect:/movie/list";
     }
 
-    @PostMapping("/modify") // 영화 수정 기능
+    @PostMapping("modify") // 영화 수정 기능
     public String modify(MovieDTO dto, @ModelAttribute("requestDTO") PageRequestDTO requestDTO, RedirectAttributes redirectAttributes) {
         log.info("post modify..................");
         log.info("dto: " + dto);
