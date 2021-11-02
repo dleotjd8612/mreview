@@ -15,7 +15,7 @@ import org.zerock.mreview.entity.Movie;
 import org.zerock.mreview.service.MovieService;
 
 @Controller
-@RequestMapping("/movie")
+@RequestMapping("/movie/")
 @Log4j2
 @RequiredArgsConstructor
 public class MovieController {

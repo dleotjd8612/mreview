@@ -19,6 +19,21 @@ public class ClubMemberTests {
     private PasswordEncoder passwordEncoder;
 
     @Test
+    public void addClubMember() {
+        ClubMember clubMember = ClubMember.builder()
+                .email("admin@museum.com")
+                .name("관리자")
+                .fromSocial(false)
+                .password(passwordEncoder.encode("1111"))
+                .build();
+
+        clubMember.addMemberRole(ClubMemberRole.USER); // 유저
+        clubMember.addMemberRole(ClubMemberRole.ADMIN); // 관리자
+
+        repository.save(clubMember);
+    }
+
+    @Test
     public void insertDummies() {
         // 1 ~ 80까지는 USER만 지정
         // 81 ~ 90까지는 USER, MANAGER

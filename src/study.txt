@@ -90,3 +90,8 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 구글 개발자 콘솔에서 프로젝트 생성하기
 https://console.cloud.google.com/projectselector2/apis/dashboard?pli=1&supportedpurview=project
 
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing
+spring.thymeleaf.check-template=false
+spring.thymeleaf.prefix=/templates/
+
+
