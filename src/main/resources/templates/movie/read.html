@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -28,7 +28,7 @@
     </style>
 </head>
 <body>
-    <th:block th:replace="~{/layout/basic :: setContent(~{this::content})}">
+    <th:block th:replace="~{/layout/basic::setContent(~{this::content})}">
         <th:block th:fragment="content">
             <h1 class="mt-4">영화 조회</h1>
             <div class="form-group">
